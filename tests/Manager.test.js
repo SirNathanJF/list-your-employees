@@ -2,7 +2,7 @@ const Manager = require("../lib/Manager");
 const Employee = require('../lib/Employee');
 
 describe('Manager', () => {
-    describe("Initilization", () => {
+    describe("Initialization", () => {
         it("should set an office number with the constructor argument", () => {
             const testOffice = 48;
             const newManager = new Manager("Foo", 1, "test@testing.com", testOffice);

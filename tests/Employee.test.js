@@ -1,7 +1,7 @@
 const Employee = require('../lib/Employee');
 
 describe('Employee', () => {
-    describe("Initilization", () => {
+    describe("Initialization", () => {
         it("should return an object containing employee info when called with the 'new' keyword", () => {
             const newEmployee = new Employee();
 
