@@ -61,8 +61,72 @@ function buildTeam() {
             buildEngineer();
         } else if (data.memberChoice === "Intern"){
             buildIntern();
-        } else (outputTeam());
+        } else (createHTML());
     });
 }
+
+function buildEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name:"name",
+            message: "What is the engineer's name?"
+        },
+        {
+            type: "input",
+            name:"id",
+            message: "What is the engineer's ID?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's GitHub username?"
+        }
+    ]). then(function(data){
+        const engineer = new Engineer(data.name, data.id, data.email, data.github);
+        workforce.push(engineer);
+        buildTeam();
+    });
+}
+
+function buildIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the intern's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the intern's ID?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the intern's email?"
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What is the intern's school?"
+        }
+    ]). then(function(data){
+        const intern = new Intern(data.name, data.id, data.email, data.school);
+        workforce.push(intern);
+        buildTeam();
+    });
+};
+
+function createHTML() {
+    fs.writeFileSync(outputPath, render(workforce), err => err ? console.error(err) : console.log("HTML page has been written, check the 'dist' folder!"))
+};
+
+addManager();
 
 
