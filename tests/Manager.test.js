@@ -5,7 +5,7 @@ describe('Manager', () => {
     describe("Initilization", () => {
         it("should set an office number with the constructor argument", () => {
             const testOffice = 48;
-            const newManager = new Manager("Foo", 1, "test@testing.com");
+            const newManager = new Manager("Foo", 1, "test@testing.com", testOffice);
 
             expect(newManager.officeNumber).toBe(testOffice);
         });
