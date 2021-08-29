@@ -1,5 +1,3 @@
-const { expect } = require('@jest/globals');
-const { it } = require('jest-circus');
 const Employee = require('../lib/Employee');
 
 describe('Employee', () => {
