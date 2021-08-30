@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(201, 225, 245);
+}
+
+.card-header-manager {
+    background-color: rgb(233, 89, 89);
+}
+
+.card-header-engineer{
+    background-color: rgb(241, 241, 55);
+}
+
+.card-header-intern {
+    background-color: rgb(240, 193, 75);
+}
+
+.card-content {
+    background-color:honeydew
+}
