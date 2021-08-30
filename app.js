@@ -57,9 +57,9 @@ function buildTeam() {
             ]
         }
     ]).then(function(data){
-        if (data.memberChoice === "Engineer"){
+        if (data.positionChoice === "Engineer"){
             buildEngineer();
-        } else if (data.memberChoice === "Intern"){
+        } else if (data.positionChoice === "Intern"){
             buildIntern();
         } else (createHTML());
     });
@@ -124,7 +124,7 @@ function buildIntern() {
 };
 
 function createHTML() {
-    fs.writeFileSync(outputPath, render(workforce), err => err ? console.error(err) : console.log("HTML page has been written, check the 'dist' folder!"))
+    fs.writeFileSync(outputPath, generateHTML(workforce), err => err ? console.error(err) : console.log("HTML page has been written, check the 'dist' folder!"))
 };
 
 addManager();
