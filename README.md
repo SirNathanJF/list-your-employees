@@ -1,5 +1,5 @@
 # Week 10 Homework- Team Profile Generator
-![License](https://img.shields.io/badge/license-GPLv3-blue)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 
 ## Instructions/User Story/Requirements
