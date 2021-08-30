@@ -11,7 +11,7 @@ const outputDirectory = path.resolve(__dirname, "dist");
 const outputPath = path.join(outputDirectory, "team.html");
 // empty array for our employee additions
 const workforce = [];
-
+// base starter questions
 const employeeQuestions = [
     {
         type: "input",
@@ -34,7 +34,7 @@ const employeeQuestions = [
         message: "What is your manager office number?"
     }
 ];
-
+// adds a manager so that data can be retrieved from Manager class
 function addManager() {
     console.log("Follow the prompts to set up your team page");
     inquirer.prompt(employeeQuestions).then(function(data){
@@ -43,7 +43,7 @@ function addManager() {
         buildTeam();
     });
 };
-
+// extends prompt to ask manaager which type of employee should be added, or not. 
 function buildTeam() {
     inquirer.prompt([
         {
@@ -64,7 +64,7 @@ function buildTeam() {
         } else (createHTML());
     });
 }
-
+// adds an engineer so that data can be retrieved from Engineer class
 function buildEngineer() {
     inquirer.prompt([
         {
@@ -93,7 +93,7 @@ function buildEngineer() {
         buildTeam();
     });
 }
-
+// adds an intern so that data can be retrieved from Intern class
 function buildIntern() {
     inquirer.prompt([
         {
@@ -122,11 +122,11 @@ function buildIntern() {
         buildTeam();
     });
 };
-
+// sends the data through the generateHTML page
 function createHTML() {
     fs.writeFileSync(outputPath, generateHTML(workforce), err => err ? console.error(err) : console.log("HTML page has been written, check the 'dist' folder!"))
 };
-
+// calls addManager function to start the prompts
 addManager();
 
 
